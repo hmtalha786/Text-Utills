@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
@@ -19,8 +18,8 @@ export default function Navbar(props) {
                             <Link className="nav-link" to="/about">{props.aboutText}</Link>
                         </li>
                     </ul>
-                    <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-                        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
+                    <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+                        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
                     </div>
                 </div>
@@ -28,13 +27,3 @@ export default function Navbar(props) {
         </nav>
     )
 }
-
-Navbar.propTypes = {
-    title: PropTypes.string.isRequired,
-    aboutText: PropTypes.string.isRequired
-}
-
-Navbar.defaultProps = {
-    title: 'Set title here',
-    aboutText: 'About'
-  };
